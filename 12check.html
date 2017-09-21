@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则校验</title>
+    <style type="text/css">
+        ul{
+            list-style:none;
+        }
+        ul li{
+            line-height:30px;
+            border:1px solid #ddd;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function(){
+                fun1();
+            }
+        }
+
+        //汉字识别
+        function isName(str){
+            var reg = /^[\u4E00-\u9FA5]{2,4}/;
+            return reg.test(str);
+        }
+
+
+        //验证８位编号　
+        function isStuNum(str){
+            var reg = /^[0-9]{8}$/;
+            return reg.test(str);
+        }
+
+        //验证邮箱地址是否合法
+        function isEmail(str){
+//            var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+            var reg = /^([\w_-])+@([\w_-])+(\.[\w_-])+/;
+            return reg.test(str);
+        }
+        //验证电话号码是否合法
+        function isTelCode(str){
+              var reg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+            return reg.test(str);
+        }
+        //是否带有小数
+        function isDecimal(strValue){
+            var objReg = /^\d+\.\d+$/;
+            return objReg.test(strValue);
+        }
+
+        function fun1(){
+            var val = document.getElementById('email').value;
+            var Tel = document.getElementById('tel').value;
+            var code = document.getElementById('code').value;
+            var name = document.getElementById('name').value;
+            var decimal = document.getElementById('decimal').value;
+
+            if(!isStuNum(code)){
+                alert('编码不对');
+                document.getElementById('code').focus();
+                return false;
+            }else{
+                alert("编码正确");
+            }
+
+            if(!isName(name)){
+                alert('姓名输入不正确');
+                document.getElementById('name').focus();
+                return false;
+            }else{
+                alert('姓名输入正确')
+            }
+
+            if(!isEmail(val)){
+                alert('邮箱地址不对');
+                document.getElementById('email').focus();
+                return false;
+            }else{
+                alert('邮箱地址正确');
+            }
+
+            if(!isTelCode(Tel)){
+                alert('手机号不对');
+                document.getElementById('tel').focus();
+                return false;
+            }else{
+                alert('手机号正确');
+            }
+
+
+
+            if(!isDecimal(decimal)){
+                alert('小数格式不对');
+                document.getElementById('decimal');
+                return false;
+            }else{
+                alert('小数格式正确');
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<form action="">
+    <ul>
+        <li>学生编号：<input type="text" id="code" value=""></li>
+        <li>学生名字：<input type="text" id="name" value=""></li>
+        <li>邮箱地址:<input type='email' id='email' value=''></li>
+        <li>电话号码:<input type='phone' id="tel" value=''></li>
+        <li>小数：<input type="text" id="decimal" value=""></li>
+    </ul>
+    <input type='submit' id='btn' />
+</form>
+</body>
+</html>
