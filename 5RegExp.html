@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var str =prompt('请输入字符串');
+//        console.log(str.search(/o\s+o/));
+        var str2 = 'aaa o o bbb o    o  aaao         ossss';
+//        console.log(str2.match(/o\s+o/g));
+//         console.log(str2.match(/o +o/g));
+        var str3 = 'www.iqianduan.cn';
+        console.log(str3.replace(/iqianduan\.cn/,'icketang.com'));
+        console.log(str3.replace('iqianduan','icketang').replace('cn','com')) ;
+        var str4 = 'div.demo#demo';
+        str4.replace(/#(sdfsdf)/, function (sdf,sdf) {
+                     return 'id="demo"';
+        })
+
+    </script>
+<body>
+    <div class="demo" id="demo"></div>
+</body>
+</html>

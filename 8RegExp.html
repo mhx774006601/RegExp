@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var str='ooooo  0 0   oooooooooo';
+    var reg1=/o\s+0\s+0\s+o/g;
+    console.log(reg1.exec(str));
+    var reg2 = new RegExp('o\\s+0\\s+0\\s+o');
+    console.log(reg2.exec(str));
+</script>
+</body>
+</html>

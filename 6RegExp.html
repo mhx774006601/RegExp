@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--//返回字符串的类型：indexOf(),lastIndexOf(),search,charCodeAt
+    //返回数组的方法：split ,match
+    //返回字符串的方法：charAt,substring,substr,slice,replace-->
+</head>
+<body>
+<script>
+    var str='aa  b  c  d e    f   ';
+    console.log(str.replace(/\s+/g,''));
+
+//    console.log(str.replace(/\s+/g,function(){
+//        return '';
+//    }));
+    function getRegExp(){
+        return /\s+/g;
+    }
+    function  deal(){
+        return '111';
+    }
+    console.log(str.replace(getRegExp(),deal));
+  </script>
+</body>
+</html>

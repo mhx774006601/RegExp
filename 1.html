@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for使用</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn1');
+            var oUl = document.getElementById('list');
+            var arr = [
+                '111111111111111111111',
+                '2f22222222222222222222',
+                '333333333333333333333,',
+                '444444444444444444',
+                '55555555555555555555'
+            ];
+            var onOff = true;
+            oBtn.onclick = function(){
+//                oUl.innerHTML = '';
+                if(onOff){
+                    for(var i=0;i<arr.length;i++){
+                        oUl.innerHTML +='<li>'+arr[i]+'</li>';
+                    }
+                    onOff = false;
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="自动生成５个新闻">
+<ul id="list"></ul>
+</body>
+</html>
